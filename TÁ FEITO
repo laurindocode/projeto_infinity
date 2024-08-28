@@ -1,0 +1,41 @@
+todas_as_tarefas = []
+
+def criar_tarefas():
+    tarefas = {}
+    nome_tarefa = input("\nDigite o nome da sua tarefa")
+    tarefas["Nome da tarefa"] = nome_tarefa
+    descricao_tarefas = input("Descreva sua Tarefa")
+    tarefas["concluido"] = False
+    tarefas["descricao_tarefas"] = descricao_tarefas
+    todas_as_tarefas.append(tarefas)
+    tarefas[nome_tarefa] = descricao_tarefas
+def listar_tarefas():
+    print(todas_as_tarefas)
+
+def conclusao_tarefa(tarefas):
+    conclusao = int(input("Digite (1) caso a tarefa esteja concluida e (2) caso ela nao esteja concluida"))
+    if tarefas == 1:
+        conclusao = True 
+        tarefas["Concluido"] = conclusao
+    else:
+        tarefas = False
+        tarefas["Concluido"] = conclusao
+
+while True: 
+    print("OLÁ, BOAS VINDAS AO <TÁ FEITO> ")
+    print("seu programa que ajuda você a programar sua vida")
+    print("--------------------------------------------")   
+    print("1- Criar Uma Tarefa")
+    print("2- Listar tarefas")
+    print("3- Estado de conclusão")
+    print("4- Editar Tarefas")
+    print("5- Excluir Tarefa")
+    print("6- Sair")
+    print("--------------------------------------------") 
+    opcao = int(input())
+    if opcao == 1:
+        criar_tarefas()
+    elif opcao == 2:
+        listar_tarefas()
+    elif opcao == 3:
+        conclusao_tarefa(tarefas= conclusao_tarefa)
